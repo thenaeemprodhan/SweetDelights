@@ -1,4 +1,4 @@
-Sweet Delights - Traditional Sweets Website
+🍬 Sweet Delights - Traditional Sweets Website
 This project is a multi-page informational and e-commerce website for "Sweet Delights," a business specializing in authentic, handcrafted traditional sweets. The website is designed to showcase the company's products, share its story, and provide contact information.
 
 📖 Description
