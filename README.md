@@ -1,50 +1,75 @@
-🍬 Sweet Delights - Traditional Sweets Website
-This project is a multi-page informational and e-commerce website for "Sweet Delights," a business specializing in authentic, handcrafted traditional sweets. The website is designed to showcase the company's products, share its story, and provide contact information.
+# Sweet Delights
 
-📖 Description
-"Sweet Delights" is a fictional brand that celebrates the art of traditional sweet-making. The website has a clean, elegant, and modern design that reflects the premium quality of the products. It is fully responsive and provides a seamless user experience across different devices.
+A responsive multi-page website for **Sweet Delights**, a fictional shop selling handcrafted Indian, Bengali and Turkish sweets.
 
-The project consists of the following pages:
+![Sweet Delights home page](docs/screenshot.png)
 
-Home: A welcoming landing page that introduces the brand's philosophy and highlights its key features.
+**Live site:** https://thenaeemprodhan.github.io/SweetDelights/
 
-Collection: A gallery of the various sweets offered, categorized into Indian, Bengali, and Turkish delights. Each product has a name, description, price, and an appealing image.
+## Pages
 
-Our Story: A page that tells the story behind the brand, adding a personal and engaging touch.
+| Page | What's on it |
+|------|--------------|
+| **Home** (`index.html`) | Hero section, why-choose-us features, best sellers, the three traditions, customer reviews |
+| **Collection** (`collection.html`) | All 12 sweets with prices, filterable by Indian, Bengali or Turkish |
+| **Our Story** (`story.html`) | The brand's history, an image slider and a timeline |
+| **Contact Us** (`contact.html`) | Contact form with validation, address, phone, email and opening hours |
 
-Contact Us: A page with a contact form, store location, email, and phone number.
+## Features
 
-✨ Features
-Multi-page Layout: The website is organized into logical sections, making it easy for users to navigate.
+- **Responsive design** for phones, tablets and desktops, with a mobile menu
+- **Product filter**: category buttons update the grid instantly, and a link such as `collection.html#bengali` opens that category
+- **Data-driven products**: all sweets live in `js/products.js`, so you can edit one file and both pages update
+- **"Order" links** open the contact form with the subject set to "Place an order" and the sweet's name in the message
+- **Image slider** with arrows, dots, autoplay and swipe on touch screens
+- **Form validation** with inline error messages and a confirmation screen
+- **Accessibility**: semantic HTML, skip link, keyboard focus styles, ARIA labels, and reduced motion when the visitor's system asks for it
+- **Custom 404 page** for GitHub Pages
 
-Responsive Design: The layout adapts to different screen sizes, ensuring a great look on desktops, tablets, and mobile phones.
+## Built with
 
-Modern UI: The design uses a professional color palette, elegant typography, and high-quality images.
+- **HTML5** and **JavaScript**, with no frameworks
+- **[Tailwind CSS](https://tailwindcss.com/)**, compiled to a single small stylesheet
+- **[Lucide](https://lucide.dev/)** icons, inlined as an SVG sprite
+- **Google Fonts**: Playfair Display and Manrope
+- Hand-made SVG illustrations of each sweet
 
-Interactive Elements: The site includes hover effects on navigation links and product cards, and an image slider on the "Our Story" page.
+## Run it locally
 
-Contact Form: A functional contact form with a confirmation message upon submission.
+Download or clone the repository and open `index.html` in your browser. That's all you need, because the compiled CSS is already included.
 
-🛠️ Technologies Used
-HTML5: For the structure and content of the web pages.
+```sh
+git clone https://github.com/thenaeemprodhan/SweetDelights.git
+cd SweetDelights
+open index.html        # macOS. On Windows, double-click index.html
+```
 
-CSS3: For styling the website, including layout, fonts, and colors.
+### Changing the styles
 
-Tailwind CSS: A utility-first CSS framework used for rapid UI development.
+You only need Node.js if you change Tailwind classes or `src/input.css`:
 
-JavaScript: For interactive features like the contact form submission.
+```sh
+npm install
+npm run dev     # rebuilds css/style.css every time you save
+npm run build   # one-off minified build
+```
 
-Google Fonts: For custom typography (Manrope and Playfair Display).
+## Project structure
 
-Lucide Icons: For clean and modern icons used throughout the site.
+```text
+├── index.html, collection.html, story.html, contact.html, 404.html
+├── css/style.css          # compiled Tailwind output (don't edit by hand)
+├── src/input.css          # Tailwind source and custom component classes
+├── js/
+│   ├── products.js        # the product catalogue
+│   └── main.js            # menu, filters, slider, contact form
+├── images/
+│   ├── favicon.svg
+│   └── sweets/            # one illustration per sweet
+└── tailwind.config.js     # brand colours and fonts
+```
 
-🚀 How to View the Project
-To view this website, you can follow these simple steps:
+## Notes
 
-Download the files: Make sure you have all the HTML, CSS, and image files in the same folder.
-
-Open index.html in your browser: Right-click on the index.html file and choose "Open with" your preferred web browser (like Chrome, Firefox, or Safari).
-
-Navigate the site: Use the navigation links in the header to explore the different pages.
-
-Thank you for checking out this project!
+- Sweet Delights, its address, phone number and reviews are all fictional.
+- The contact form works entirely in the browser and doesn't send messages anywhere. To receive real messages, connect it to a service such as [Formspree](https://formspree.io/) (see the comment in `js/main.js`).

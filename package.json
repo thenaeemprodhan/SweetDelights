@@ -1,0 +1,21 @@
+{
+  "name": "sweet-delights",
+  "version": "1.0.0",
+  "description": "Website for Sweet Delights, a fictional traditional sweet shop",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenaeemprodhan/SweetDelights.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thenaeemprodhan/SweetDelights/issues"
+  },
+  "homepage": "https://github.com/thenaeemprodhan/SweetDelights#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}

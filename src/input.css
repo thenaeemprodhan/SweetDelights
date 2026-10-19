@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  h1, h2, h3 { @apply font-serif; }
+  :focus-visible { @apply outline-none ring-2 ring-saffron ring-offset-2 ring-offset-cream; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+  .icon { @apply inline-block h-5 w-5 shrink-0; }
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.2em] text-saffron; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition; }
+  .btn-primary { @apply btn bg-maroon text-white shadow-soft hover:bg-maroon-dark; }
+  .btn-outline { @apply btn border border-maroon/30 text-maroon hover:border-maroon hover:bg-maroon hover:text-white; }
+  .nav-link { @apply relative py-2 text-sm font-semibold text-ink/80 transition hover:text-maroon; }
+  .nav-link::after { content: ''; @apply absolute -bottom-0.5 left-0 h-0.5 w-0 rounded bg-saffron transition-all; }
+  .nav-link:hover::after, .nav-link[aria-current='page']::after { @apply w-full; }
+  .nav-link[aria-current='page'] { @apply text-maroon; }
+  .card { @apply overflow-hidden rounded-3xl bg-white shadow-soft; }
+  .product-card { @apply card flex flex-col transition duration-300 hover:-translate-y-1 hover:shadow-xl; }
+  .product-card img { @apply transition duration-500; }
+  .product-card:hover img { @apply scale-105; }
+  .filter-btn { @apply rounded-full border border-maroon/20 bg-white px-5 py-2 text-sm font-semibold text-maroon transition hover:border-maroon; }
+  .filter-btn[aria-pressed='true'] { @apply border-maroon bg-maroon text-white; }
+  .field { @apply mt-1.5 w-full rounded-xl border border-sand bg-cream/60 px-4 py-3 text-sm transition placeholder:text-muted/60 focus:border-saffron focus:bg-white focus:outline-none focus:ring-2 focus:ring-saffron/40; }
+  .field[aria-invalid='true'] { @apply border-red-500 focus:ring-red-300; }
+  .field-error { @apply mt-1 hidden text-xs font-medium text-red-600; }
+}
